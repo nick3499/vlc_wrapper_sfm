@@ -1,6 +1,8 @@
 # vlc_wrapper_sfm
 VLC Wrapper Script for SFM: flask.Flask(), flask.render_template, csv.reader()
 
+![screen capture](screen_capture.png)
+
 ## Run the App
 
 To run the app, enter the following command line arguments in a Unix-like terminal emulator.
