@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VLC Wrapper for SomaFM</title>
+  <style>
+  @import url("https://fonts.googleapis.com/css?family=Sriracha&display=swap");
+  body {
+    font-family: "Sriracha", cursive;
+    background-color: #cc9900;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a.blk1 {
+    color: #ffffff;
+    background-color: #663300;
+    display: inline-block;
+    text-decoration: none;
+    padding: .3em;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  }
+  a.blk1:hover {
+    background-color: #cc6600;
+    color: #cc9900;
+    box-shadow: none;
+  }
+  a.blk1:active {
+    background-color: #ff0000; /* red */
+  }
+  a.blk2 {
+    color: #cc6600;
+    background-color: #663300;
+    display: inline-block;
+    text-decoration: none;
+    padding: .3em;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  }
+  a.blk2:hover {
+    background-color: #cc6600;
+    color: #cc9900;
+    box-shadow: none;
+  }
+  a.blk2:active {
+    background-color: #ff0000; /* red */
+  }
+  div.blk3 {
+    color: #cc9900;
+    background-color: #cc6600;
+    display: inline-block;
+    padding: .3em;
+    margin: .2em;
+  }
+  p > a > img {
+    margin: 1.5em;
+    display: block;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  }
+  </style>
+</head>
+<body>
+  <p>
+    <a href="http://somafm.com/">
+      <img src="http://somafm.com/linktous/300x250sfm.jpg"
+        alt="SomaFM commercial free internet radio" border=0 height=250
+        width=300>
+    </a>
+  </p>
+  <ul>
+    {% for i in STATION_NAMES %}
+    <li>{# station name | genres #}
+      <a href="http://ice{{GENRES_URL[i][2]}}.somafm.com/{{GENRES_URL[i][1]}}-128-aac" target="_blank" class="blk1">
+        {{ i }}
+      </a>
+      <a href="http://ice{{GENRES_URL[i][3]}}.somafm.com/{{GENRES_URL[i][1]}}-128-aac" target="_blank" class="blk2">
+        Alt
+      </a>
+      <div class="blk3">{{GENRES_URL[i][0]}}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
+
