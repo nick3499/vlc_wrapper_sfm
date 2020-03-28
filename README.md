@@ -69,7 +69,44 @@ The decorator modifies the `index()` method, where the route is set. In this cas
 return render_template('template.html', GENRES_URL=GENRES_URL, STATION_NAMES=STATION_NAMES)
 ```
 
+The `template.html` file is stored in the `templates/` directory because there is where Flask will look for it.
+
 The web page's template will be rendered by the [Jinja](https://palletsprojects.com/p/jinja/) template engine.
+
+### SomaFM Logo
+
+SomaFM asks for inclusion of a logo if a developer links to their streams. The largest logo link becomes useful as a header.
+
+```html
+<p>
+  <a href="http://somafm.com/">
+    <img src="http://somafm.com/linktous/300x250sfm.jpg" 
+         alt="SomaFM commercial free internet radio" 
+         border=0 
+         height=250 width=300>
+  </a>
+</p>
+```
+
+### Looping Structure
+
+```html
+{% for i in STATION_NAMES %}
+<li>{# station name | genres #}
+  <a href="http://ice{{ GENRES_URL[i][2] }}.somafm.com/{{ GENRES_URL[i][1] }}-128-aac" target="_blank" class="blk1">
+    {{ i }}
+  </a>
+  <a href="http://ice{{ GENRES_URL[i][3] }}.somafm.com/{{ GENRES_URL[i][1] }}-128-aac" target="_blank" class="blk2">
+    Alt
+  </a>
+  <div class="blk3">
+    {{ GENRES_URL[i][0] }}
+  </div>
+</li>
+{% endfor %}
+```
+
+Above is an example of a Jinja engine looping structure, from `{% for i in STATION_NAMES %}` to `{% endfor %}`. `{# station name | genres #}` is an example of a comment. Expressions are inserted using handlebar/mustache-style syntax. The link above will end up something like `http://ice3.somafm.com/reggae-128-aac`. 
 
 ## If Standalone
 
