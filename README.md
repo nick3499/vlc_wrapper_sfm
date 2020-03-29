@@ -5,7 +5,7 @@ VLC Wrapper Script for SFM: flask.Flask(), flask.render_template, csv.reader()
 
 ## Run the App
 
-To run the app, enter the following command line arguments in a Unix-like terminal emulator.
+To run the app, enter the following command line arguments in a Unix-like terminal emulator. `source vlc_wrapper_sfm.sh` will do the same thing.
 
 ```shell
 $ . vlc_wrapper_sfm.sh
@@ -110,7 +110,7 @@ Above is an example of a Jinja engine looping structure, from `{% for i in STATI
 
 ## If Standalone
 
-If the app runs as a standalone, then `APP.run()` will be executed.
+If the app runs as a standalone, then `APP.run()` will be executed. See `flask run` in the shell script above.
 
 ```python
 if __name__ == '__main__':
