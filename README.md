@@ -69,7 +69,7 @@ The decorator modifies the `index()` method, where the route is set. In this cas
 return render_template('template.html', GENRES_URL=GENRES_URL, STATION_NAMES=STATION_NAMES)
 ```
 
-The `template.html` file is stored in the `templates/` directory because there is where Flask will look for it.
+The `template.html` file is stored in the `templates/` directory because that is where Flask will look for it.
 
 The web page's template will be rendered by the [Jinja](https://palletsprojects.com/p/jinja/) template engine.
 
