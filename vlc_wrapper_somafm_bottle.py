@@ -1,6 +1,6 @@
 #! /bin/python3
 '''`vlc_wrapper_somafm_bottle` wraps VLC media player. User given choice of \
-Internet radio links. Script made available under MIT license.'''
+SomaFM links. Script made available under MIT license.'''
 from csv import reader
 from bottle import route
 from bottle import SimpleTemplate
@@ -20,6 +20,7 @@ def index():
         for record in _reader:
             DATA[record[0]] = [record[1], record[2], record[3], record[4]]
             NAMES.append(record[0])
+        _file.close()
     return TPL.render(data=DATA, names=NAMES)
 
 
