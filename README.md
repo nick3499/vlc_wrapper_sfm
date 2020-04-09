@@ -133,3 +133,13 @@ from bottle import run
 - SimpleTemplate instance: `TPL = SimpleTemplate(name='views/template.tpl')`
 - `return TPL.render(data=DATA, names=NAMES)` returns data to the `bottle.SimpleTemplate.render()` instance.
 - `run(host='localhost', port=8080)` runs the rendered template for web page display. `localhost` can be replaced with `127.0.0.1` or any typical loopback address.
+
+### template.tpl
+
+```python
+% for i in names:
+    ...
+% end
+```
+
+The basic difference is the syntax for the looping structure.
