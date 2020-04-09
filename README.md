@@ -130,7 +130,7 @@ from bottle import run
 
 - `bottle.route()` [class wraps a route callback along with route specific metadata and configuration and applies Plugins on demand.](https://bottlepy.org/docs/dev/api.html#bottle.Route)
 - `bottle.SimpleTemplate.render()` renders [the template using keyword arguments as local variables.](https://bottlepy.org/docs/dev/stpl.html#bottle.SimpleTemplate.render)
-- SimpleTemplate instance: `TPL = SimpleTemplate(name='views/template.tpl')`
+- SimpleTemplate instance: `TPL = SimpleTemplate(name=f'{PROJ_DIR}/views/template.tpl')`
 - `return TPL.render(data=DATA, names=NAMES)` returns data to the `bottle.SimpleTemplate.render()` instance.
 - `run(host='localhost', port=8080)` runs the rendered template for web page display. `localhost` can be replaced with `127.0.0.1` or any typical loopback address.
 
@@ -142,4 +142,4 @@ from bottle import run
 % end
 ```
 
-The basic difference is the syntax for the looping structure.
+The basic difference in the template is the syntax for the looping structure.
