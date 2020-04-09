@@ -116,3 +116,20 @@ If the app runs as a standalone, then `APP.run()` will be executed. See `flask r
 if __name__ == '__main__':
     APP.run()
 ```
+
+## vlc_wrapper_somafm_bottle.py
+
+[Bottle microframework](https://bottlepy.org/docs/dev/) differs from [Flask microframework](https://flask.palletsprojects.com/en/1.1.x/) in various ways, but they are generally the same.
+
+```python
+from csv import reader
+from bottle import route
+from bottle import SimpleTemplate
+from bottle import run
+```
+
+- `bottle.route()` [class wraps a route callback along with route specific metadata and configuration and applies Plugins on demand.](https://bottlepy.org/docs/dev/api.html#bottle.Route)
+- `bottle.SimpleTemplate.render()` renders [the template using keyword arguments as local variables.](https://bottlepy.org/docs/dev/stpl.html#bottle.SimpleTemplate.render)
+- SimpleTemplate instance: `TPL = SimpleTemplate(name='views/template.tpl')`
+- `return TPL.render(data=DATA, names=NAMES)` returns data to the `bottle.SimpleTemplate.render()` instance.
+- `run(host='localhost', port=8080)` runs the rendered template for web page display. `localhost` can be replaced with `127.0.0.1` or any typical loopback address.
