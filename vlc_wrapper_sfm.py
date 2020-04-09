@@ -14,13 +14,13 @@ STATION_NAMES = []
 @APP.route('/')
 def index():
     '''Display Internet radio links.'''
-    with open('station_data.csv', 'r') as _file:
+    with open('csv/stations.csv', 'r') as _file:
         _reader = reader(_file)
         for record in _reader:
             GENRES_URL[record[0]] = [record[1], record[2], record[3],
                                      record[4]]
             STATION_NAMES.append(record[0])
-    return render_template('template.html', GENRES_URL=GENRES_URL,
+    return render_template('template.htm', GENRES_URL=GENRES_URL,
                            STATION_NAMES=STATION_NAMES)
 
 
