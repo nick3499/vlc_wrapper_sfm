@@ -15,8 +15,7 @@ TPL = SimpleTemplate(name='views/template.tpl')
 @route('/')
 def index():
     '''List SomaFM links, including alternate links.'''
-    with open('/usr/local/lib/vlc_wrapper_somafm_bottle/csv/stations.csv',
-              'r') as _file:
+    with open('/csv/stations.csv', 'r') as _file:
         _reader = reader(_file)
         for record in _reader:
             DATA[record[0]] = [record[1], record[2], record[3], record[4]]
