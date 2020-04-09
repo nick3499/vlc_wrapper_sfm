@@ -9,13 +9,14 @@ from bottle import run
 
 DATA = {}
 NAMES = []
-TPL = SimpleTemplate(name='views/template.tpl')
+PROJ_DIR = '/usr/local/lib/vlc_wrapper_somafm_bottle'
+TPL = SimpleTemplate(name=f'{PROJ_DIR}/views/template.tpl')
 
 
 @route('/')
 def index():
     '''List SomaFM links, including alternate links.'''
-    with open('csv/stations.csv', 'r') as _file:
+    with open(f'{PROJ_DIR}/csv/stations.csv', 'r') as _file:
         _reader = reader(_file)
         for record in _reader:
             DATA[record[0]] = [record[1], record[2], record[3], record[4]]
