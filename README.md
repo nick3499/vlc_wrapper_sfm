@@ -164,3 +164,5 @@ from bottle import run
 ```
 
 The basic difference in the template is the syntax for the looping structure.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R72LISM)
